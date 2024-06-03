@@ -1,0 +1,8 @@
+.container-fluid {
+   
+    height: 100%;
+    background-image: url('../../../../../public/image.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}

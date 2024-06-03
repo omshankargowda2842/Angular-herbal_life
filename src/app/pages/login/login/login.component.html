@@ -1,0 +1,17 @@
+<div class="container-fluid bg-primary h-100" style="justify-content: center;display: flex; align-items: center;height: 100%;">
+    <div class="col-9 col-sm-5  col-lg-3  " style="background-color: rgb(14, 134, 14);border-radius: 10px; " >
+        <form style="  padding: 30px; " (ngSubmit)="onSubmit()">
+            <div data-mdb-input-init class="form-outline mb-4">
+                <input type="email" id="form2Example1" name="email" [(ngModel)]="email"   placeholder=" Enter Email address" class="form-control" />
+            </div>
+            <p style="color: red; margin-top:-25px ;" *ngIf="emailerr!=''">{{emailerr}}</p>
+            <div data-mdb-input-init class="form-outline mb-4">
+                <input type="password" id="form2Example2" name="password"[(ngModel)]="password"   placeholder="Enter Password" class="form-control" />
+            </div>
+            <p style="color: red; margin-top:-25px ;" *ngIf="passworderr!=''">{{passworderr}}</p>
+            <div style="display: flex;justify-content: center;">
+                <button  type="submit"   style="background-color: azure; width: 90px; border: 0px; border-radius: 4px;">Login</button>
+            </div>
+        </form>
+    </div>
+</div>
