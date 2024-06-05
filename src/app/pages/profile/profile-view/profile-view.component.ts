@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { MainscreenComponent } from '../../../components/components/mainscreen/mainscreen.component';
 
 @Component({
-  selector: 'app-product-list',
+  selector: 'app-profile-view',
   standalone: true,
   imports: [MainscreenComponent],
-  templateUrl: './product-list.component.html',
-  styleUrl: './product-list.component.css'
+  templateUrl: './profile-view.component.html',
+  styleUrl: './profile-view.component.css'
 })
-export class ProductListComponent {
+export class ProfileViewComponent {
 
 }

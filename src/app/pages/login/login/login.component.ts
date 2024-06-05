@@ -51,25 +51,22 @@ export class LoginComponent {
     // If no errors, proceed with the HTTP request
     if (!error) {
       this.http.post('http://127.0.0.1:8000/api/login', body, { headers })
-        .pipe(
-          map(response => {
-            // Handle the response and store the token if login is successful
-            if (response) {
-              console.log(response, 'response');
-            }
+        .pipe(map((response:any) => {
             return response;
           })
         )
-        .subscribe(
-          response => {
-            console.log('Login successful', response);
-            this.router.navigate(['login/register'])
-          },
-          error => {
+        .subscribe({
+          next:(response:any)=>{
+            if(response.success==true)
+          {
+            localStorage.setItem('token', response.token);
+            this.router.navigate(['products'])
+          }
+        },error:error =>{
             console.error('Login error', error);
             this.errorMessage = 'Login failed. Please try again.';
-          }
-        );
+        }
+      });
     }
   }
 }
