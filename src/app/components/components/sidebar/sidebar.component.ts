@@ -32,7 +32,10 @@ console.log('ngoninit')
   }
 logoutClick(){
   this.router.navigate(['/login'])
-  localStorage.removeItem('token')
+  localStorage.setItem('token','')
+  
+  localStorage.setItem('isLoggedIn', 'false');
+
 }
 
 

@@ -17,6 +17,11 @@ export class LoginComponent {
   errorMessage: string = '';
 
   constructor(private http: HttpClient,private router:Router) { }
+  ngOnInit(){
+    setTimeout(() => {
+      this.logout();
+    }, 120000);
+  }
 
   onSubmit(): void {
     let error = false;
@@ -57,10 +62,17 @@ export class LoginComponent {
         )
         .subscribe({
           next:(response:any)=>{
-            if(response.success==true)
+           console.log(response['success']);
+            if(response['success']===true)
           {
-            localStorage.setItem('token', response.token);
+            localStorage.setItem('token', response['token']);
+            localStorage.setItem('isLoggedIn', 'true');
             this.router.navigate(['products'])
+            console.log( localStorage.getItem('token'),'om')
+          }else{
+            localStorage.setItem('token', response['token']);
+            localStorage.setItem('isLoggedIn', 'false');
+            console.log( localStorage.getItem('token'),'om')
           }
         },error:error =>{
             console.error('Login error', error);
@@ -68,5 +80,12 @@ export class LoginComponent {
         }
       });
     }
+  }
+
+  logout(){
+    localStorage.setItem('isLoggedIn','false')
+    this.router.navigate(['/login'])
+    localStorage.setItem('token','')
+
   }
 }
