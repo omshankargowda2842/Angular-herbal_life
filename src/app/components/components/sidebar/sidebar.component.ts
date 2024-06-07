@@ -13,13 +13,12 @@ export class SidebarComponent {
   constructor(private router:Router){}
 
   ngOnInit():void {
-console.log('ngoninit')
-  } 
+  }
   selected:string= localStorage.getItem('tab') || 'dashboard'
 
-  
 
-  
+
+
   selectedTab(tab:string){
     localStorage.setItem('tab',tab)
     this.selected=tab
@@ -28,12 +27,12 @@ console.log('ngoninit')
     }
 
   }
-  
+
 logoutClick(){
   this.router.navigate(['/login'])
   localStorage.setItem('token','')
   localStorage.setItem('tab','dashboard')
-  
+
   localStorage.setItem('isLoggedIn', 'false');
 
 }

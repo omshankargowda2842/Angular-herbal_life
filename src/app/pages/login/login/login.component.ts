@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs';
 import { Router } from '@angular/router';
-// import { LoginService } from '../services/login.service'; 
+// import { LoginService } from '../services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +20,7 @@ export class LoginComponent {
   ngOnInit(){
     setTimeout(() => {
       this.logout();
-    }, 3600000);
+    }, 3600);
   }
 
   onSubmit(): void {
@@ -64,11 +64,11 @@ export class LoginComponent {
             localStorage.setItem('token', response['token']);
             localStorage.setItem('isLoggedIn', 'true');
             this.router.navigate(['products'])
-            console.log( localStorage.getItem('token'),'om')
+            // console.log( localStorage.getItem('token'),'om')
           }else{
             localStorage.setItem('token', response['token']);
             localStorage.setItem('isLoggedIn', 'false');
-            console.log( localStorage.getItem('token'),'om')
+            // console.log( localStorage.getItem('token'),'om')
           }
         },error:error =>{
             console.error('Login error', error);
