@@ -54,10 +54,12 @@
         </div>
     </nav>
 </div> -->
-<div style="display: flex; flex-direction: column;   height: 100vh; background-color: rgb(52, 246, 126);overflow-y: auto;">
-    
-<p class="nav-items"   (click)="productsClick()" >Dashboard</p>
-<p class="nav-items "  (click)="ordersClick()" >My Orders</p>
-<p class="nav-items"  (click)="profileClick()"  >My Profile</p>
-<p class="nav-items" (click)="logoutClick()"  >LogOut</p>
+<div style="display: flex; flex-direction: column;   height: 100vh; background-color: rgb(40, 209, 85);overflow-y: auto;">
+
+<a class="nav-items" [ngClass]="{'active': selected === 'dashboard'}"  routerLink="/products" (click)="selectedTab('dashboard')" >Dashboard</a>
+<a class="nav-items" [ngClass]="{'active': selected === 'orders'}" routerLink="/orders"  (click)="selectedTab('orders')" >My Orders</a>
+<a class="nav-items" [ngClass]="{'active': selected === 'profile'}" routerLink="/profile" (click)="selectedTab('profile')" >My Profile</a>
+<a class="nav-items" [ngClass]="{'active': selected === 'logout'}" (click)="selectedTab('logout')" >Logout</a>
+
+
 </div>

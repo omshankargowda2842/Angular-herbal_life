@@ -20,7 +20,7 @@ export class LoginComponent {
   ngOnInit(){
     setTimeout(() => {
       this.logout();
-    }, 120000);
+    }, 3600000);
   }
 
   onSubmit(): void {
@@ -55,11 +55,7 @@ export class LoginComponent {
 
     // If no errors, proceed with the HTTP request
     if (!error) {
-      this.http.post('http://127.0.0.1:8000/api/login', body, { headers })
-        .pipe(map((response:any) => {
-            return response;
-          })
-        )
+      this.http.post('http://127.0.0.1:8000/api/login', body)
         .subscribe({
           next:(response:any)=>{
            console.log(response['success']);

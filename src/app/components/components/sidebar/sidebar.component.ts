@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.css'
 })
@@ -14,25 +14,25 @@ export class SidebarComponent {
 
   ngOnInit():void {
 console.log('ngoninit')
-  }
-
+  } 
+  selected:string= localStorage.getItem('tab') || 'dashboard'
 
   
 
-  profileClick(){
-    this.router.navigate(['/profile'])
+  
+  selectedTab(tab:string){
+    localStorage.setItem('tab',tab)
+    this.selected=tab
+    if(this.selected=='logout'){
+      // this.logoutClick();
+    }
 
   }
-  productsClick(){
-    this.router.navigate(['/products'])
-
-  }
-  ordersClick(){
-   
-  }
+  
 logoutClick(){
   this.router.navigate(['/login'])
   localStorage.setItem('token','')
+  localStorage.setItem('tab','dashboard')
   
   localStorage.setItem('isLoggedIn', 'false');
 
