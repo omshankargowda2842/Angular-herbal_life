@@ -54,7 +54,7 @@
         </div>
     </nav>
 </div> -->
-<div style="display: flex; flex-direction: column;   height: 100vh; background-color: rgb(40, 209, 85);overflow-y: auto;">
+<div style="display: flex; flex-direction: column;   height: 100vh; background-color: rgb(40, 209, 85);overflow-y: auto;border: 1px solid ;">
 
 <a class="nav-items" [ngClass]="{'active': selected === 'dashboard'}"  routerLink="/products" (click)="selectedTab('dashboard')" >Dashboard</a>
 <a class="nav-items" [ngClass]="{'active': selected === 'orders'}" routerLink="/orders"  (click)="selectedTab('orders')" >My Orders</a>

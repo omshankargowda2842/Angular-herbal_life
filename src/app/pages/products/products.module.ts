@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProductListComponent } from './product-list/product-list.component';
 import { MainscreenComponent } from '../../components/components/mainscreen/mainscreen.component';
 import { ComponentsModule } from '../../components/components/components.module';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes:Routes=[
   {
@@ -18,8 +19,9 @@ const routes:Routes=[
     RouterModule.forChild(routes),
     ComponentsModule,
     MainscreenComponent,
-    RouterModule
-    
+    RouterModule,
+    HttpClientModule
+
   ]
 })
 export class ProductsModule { }

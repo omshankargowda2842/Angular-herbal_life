@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs';
 import { Router } from '@angular/router';
@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent  {
   email: string = '';
   password: string = '';
   emailerr: string = '';
@@ -18,9 +18,7 @@ export class LoginComponent {
 
   constructor(private http: HttpClient,private router:Router) { }
   ngOnInit(){
-    setTimeout(() => {
-      this.logout();
-    }, 3600);
+
   }
 
   onSubmit(): void {
@@ -61,7 +59,11 @@ export class LoginComponent {
            console.log(response['success']);
             if(response['success']===true)
           {
+            setTimeout(() => {
+              this.logout();
+            }, 3600000);
             localStorage.setItem('token', response['token']);
+            localStorage.setItem('isAdmin', response['isAdmin']);
             localStorage.setItem('isLoggedIn', 'true');
             this.router.navigate(['products'])
             // console.log( localStorage.getItem('token'),'om')
@@ -82,6 +84,7 @@ export class LoginComponent {
     localStorage.setItem('isLoggedIn','false')
     this.router.navigate(['/login'])
     localStorage.setItem('token','')
+    localStorage.removeItem('isAdmin');
 
   }
 }
