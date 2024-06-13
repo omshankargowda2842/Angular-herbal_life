@@ -23,7 +23,7 @@ export class SidebarComponent {
     localStorage.setItem('tab',tab)
     this.selected=tab
     if(this.selected=='logout'){
-      // this.logoutClick();
+      this.logoutClick();
     }
 
   }

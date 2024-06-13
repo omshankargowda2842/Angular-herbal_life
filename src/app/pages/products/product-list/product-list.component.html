@@ -4,13 +4,13 @@
     <div style=" width:90% ;display: flex; justify-content: center; ">
       <h3 style="color: white; ">Products List</h3>
     </div>
-    <div style="display:flex; justify-content: end; width: 20%; height: fit-content;align-items: center;"><button
-        *ngIf="isAdmin" style=" border-radius: 5px; border: none;">Add Products</button></div>
+    <div style="display:flex; justify-content: end; width: 20%; height: fit-content;align-items: center;"><button (click)="createProduct()"
+        *ngIf="isAdmin" style=" border-radius: 5px; border: none;" >Add Products</button></div>
   </div>
   <div class="row  m-0">
     <div class="col products ">
       <div *ngFor="let product of productsList">
-        <div class="product">
+        <div class="product" (click)="viewProduct(product.product_id)">
           <div class="image" >
               <img  src="" alt="image">
           </div>

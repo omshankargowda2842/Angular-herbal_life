@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { MainscreenComponent } from '../../../components/components/mainscreen/mainscreen.component';
 import { errorContext } from 'rxjs/internal/util/errorContext';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -13,7 +14,7 @@ import { errorContext } from 'rxjs/internal/util/errorContext';
 })
 export class ProductListComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit() {
     this.getProducts();
@@ -33,6 +34,16 @@ export class ProductListComponent implements OnInit {
           console.log(error)
         }
       })
+  }
+
+  viewProduct(id: any) {
+    var id = id
+    console.log('om')
+    this.router.navigate(['products/products/', id]);
+
+  }
+  createProduct(){
+    this.router.navigate(['products/create']);
   }
 
 }
