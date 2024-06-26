@@ -4,6 +4,7 @@
   border: 1px solid black;
   border-radius: 5px;
   margin-top: 5px;
+  overflow: hidden;
 }
 .products{
   display: flex;
@@ -14,19 +15,28 @@
   padding: 20px;
   background-color: aliceblue;
 
+
 }
 .image{
 display: flex;
 justify-content: center;
+transition: transform .5s;
+}
+.image:hover{
+
+  transform: scale(1.1);
+
+
 }
 img{
 
-  border: 1px solid;
+  /* border: 1px solid; */
   align-items: center;
   border-radius: 5px;
   margin: 10px;
   width: 90%;
   height: 200px;
+
 }
 .product p {
   display: -webkit-box;

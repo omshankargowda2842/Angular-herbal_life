@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { MainscreenComponent } from '../../../components/components/mainscreen/mainscreen.component';
-
 @Component({
   selector: 'app-products-create',
   standalone: true,

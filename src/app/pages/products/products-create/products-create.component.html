@@ -1,8 +1,23 @@
 <app-mainscreen>
-  <div
-  style=" display:flex; justify-content: center;padding: 10px;background-color: rgb(40, 209, 85); margin-left: 0px; align-items: center; border: 1px solid;">
-  <div style=" width:90% ;display: flex; justify-content: center; ">
-    <h3 style="color: white; ">Create Product</h3>
+
+  <div style=" height: 100vh;">
+
+
+    <div
+      style=" display:flex; justify-content: center;padding: 10px;background-color: rgb(40, 209, 85); margin-left: 0px; align-items: center; border: 1px solid; overflow-y: auto;">
+      <div style=" width:100% ;display: flex; justify-content: center; ">
+        <h3 style="color: white; ">Create Product</h3>
+      </div>
+
+    </div>
+    <div style="display: flex;justify-content:center; align-items: center; height: 100%; ">
+      <form class="col-md-8" action="">
+        <div class="row">
+          <div class="col-md-4"><label for="">Product Name</label><input type="text"></div>
+          <div class="col-md-4"><label for="">Product Actual-Price</label><input type="text"></div>
+          <div class="col-md-4"><label for="">Product Current-Price</label><input type="text"></div>
+        </div>
+      </form>
+    </div>
   </div>
-</div>
 </app-mainscreen>

@@ -66,11 +66,9 @@ export class LoginComponent  {
             localStorage.setItem('isAdmin', response['isAdmin']);
             localStorage.setItem('isLoggedIn', 'true');
             this.router.navigate(['products'])
-            // console.log( localStorage.getItem('token'),'om')
           }else{
             localStorage.setItem('token', response['token']);
-            localStorage.setItem('isLoggedIn', 'false');
-            // console.log( localStorage.getItem('token'),'om')
+            localStorage.setItem('isLoggedIn', 'false')
           }
         },error:error =>{
             console.error('Login error', error);
@@ -81,10 +79,9 @@ export class LoginComponent  {
   }
 
   logout(){
-    localStorage.setItem('isLoggedIn','false')
-    this.router.navigate(['/login'])
-    localStorage.setItem('token','')
+    localStorage.setItem('isLoggedIn','false');
+    this.router.navigate(['/login']);
+    localStorage.setItem('token','');
     localStorage.removeItem('isAdmin');
-
   }
 }

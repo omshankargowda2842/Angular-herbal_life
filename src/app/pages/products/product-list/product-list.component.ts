@@ -29,7 +29,6 @@ export class ProductListComponent implements OnInit {
 
           this.productsList = response.data
           console.log(this.productsList)
-
         }, error: error => {
           console.log(error)
         }
@@ -38,7 +37,6 @@ export class ProductListComponent implements OnInit {
 
   viewProduct(id: any) {
     var id = id
-    console.log('om')
     this.router.navigate(['products/products/', id]);
 
   }

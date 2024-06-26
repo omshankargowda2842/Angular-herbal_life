@@ -5,14 +5,14 @@
       <h3 style="color: white; ">Products List</h3>
     </div>
     <div style="display:flex; justify-content: end; width: 20%; height: fit-content;align-items: center;"><button (click)="createProduct()"
-        *ngIf="isAdmin" style=" border-radius: 5px; border: none;" >Add Products</button></div>
+        *ngIf="isAdmin== '1'" style=" border-radius: 5px; border: none;" >Add Products</button></div>
   </div>
   <div class="row  m-0">
     <div class="col products ">
       <div *ngFor="let product of productsList">
         <div class="product" (click)="viewProduct(product.product_id)">
           <div class="image" >
-              <img  src="" alt="image">
+              <img  src="https://i.ebayimg.com/00/s/MTE0MVgxMjMw/z/EDUAAOSwAWtb00q~/$_57.JPG" alt="image">
           </div>
           <p>
             {{product.product_name}}
@@ -20,11 +20,9 @@
           <div>
             <label for="">₹{{product.product_currentprice}}</label>
             <label style="text-decoration-line: line-through;font-weight: 400;" *ngIf="product.product_currentprice <product.product_actualprice" for="">₹{{product.product_actualprice}}</label>
-
           </div>
         </div>
       </div>
     </div>
   </div>
-
 </app-mainscreen>
